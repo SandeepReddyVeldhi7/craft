@@ -2,6 +2,7 @@ import HomeClient from "./HomeClient";
 
 // SEO Metadata for the home page
 export const metadata = {
+  metadataBase: new URL("http://localhost:3000"),
   title: "A&A Pixel & Crafts - Home | Premium Printing & Gifting",
   description: "Your trusted partner for corporate gifting, printing, and branding solutions. We deliver premium quality products that leave lasting impressions.",
   openGraph: {

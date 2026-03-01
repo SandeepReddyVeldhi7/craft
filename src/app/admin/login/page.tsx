@@ -33,7 +33,10 @@ export default function LoginPage() {
             setError("message" in data ? data.message : "Login failed");
             return;
         }
-
+        if (!("token" in data)) {
+            setError("Invalid login response");
+            return;
+        }
         localStorage.setItem("token", data.token);
         router.push("/admin/dashboard");
     };
