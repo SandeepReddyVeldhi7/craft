@@ -1,4 +1,5 @@
 "use client";
+
 import { useState } from "react";
 import { useSearchParams } from "next/navigation";
 
@@ -6,7 +7,7 @@ export default function ResetPasswordForm() {
     const [password, setPassword] = useState("");
     const [msg, setMsg] = useState("");
 
-    const searchParams = useSearchParams(); // ✅ safe here
+    const searchParams = useSearchParams();
     const token = searchParams.get("token");
 
     const handleReset = async (e: React.FormEvent<HTMLFormElement>) => {
@@ -28,9 +29,14 @@ export default function ResetPasswordForm() {
                 onSubmit={handleReset}
                 className="bg-white p-8 rounded-2xl shadow-lg w-full max-w-md"
             >
-                <h2 className="text-2xl font-bold text-center mb-6">Reset Password</h2>
+                <h2 className="text-2xl font-bold text-center mb-6">
+                    Reset Password
+                </h2>
 
-                <label className="block text-sm font-medium mb-1">New Password</label>
+                <label className="block text-sm font-medium mb-1">
+                    New Password
+                </label>
+
                 <input
                     type="password"
                     placeholder="Enter new password"
@@ -47,7 +53,11 @@ export default function ResetPasswordForm() {
                     Reset Password
                 </button>
 
-                {msg && <p className="mt-4 text-center text-green-600">{msg}</p>}
+                {msg && (
+                    <p className="mt-4 text-center text-green-600">
+                        {msg}
+                    </p>
+                )}
             </form>
         </div>
     );
